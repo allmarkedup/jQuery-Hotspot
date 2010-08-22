@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta encoding="utf8">
+	
+	<style type="text/css" media="screen">
+		#item {
+			width: 600px;
+			height: 400px;
+			background: #666;
+			margin: 30px auto;
+		}
+				
+		#page {
+			width: 600px;
+			margin: 0 auto;
+		}
+	</style>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
+	<script src="jquery.hotspot.js"></script>
+	
+	<script>
+	
+	$(function(){
+		var item = $('#item');
+	
+		item.bind('changed.hotspot', function( e, row, col ){
+			$('#position span').text('row: '+row+' col: '+col );
+		});
+
+		item.bind('clicked.hotspot', function( e, row, col ){
+			alert('CLICKED: row: '+row+' col: '+col );
+		});
+		
+		item.hotspot({ rows:3, cols:3 }); // split the target into a 3 by 3 grid
+	});
+	
+	</script>
+
+	<title>jQuery HotSpot</title>
+</head>
+<body>
+	
+	<div id="page">
+		
+		<h1>jQuery Hotspot plugin</h1>
+		
+		<p>Mouse over or click anywhere on the rectangle. View source for implementation details.</p>
+		
+		<div id="item">&nbsp;</div> <!-- /item -->
+
+		<p id="position">Position: <span></span></p>
+		
+	</div>
+	
+
+	
+</body>	
+</html>
