@@ -15,7 +15,7 @@
 	{
 		return this.each(function(){
 
-			var opts = $.extend({}, defaults, options); // set options
+			var opts = $.extend({}, defaults, options), // set options
 			$item = $(this);
 		
 			var offset = $item.offset();
